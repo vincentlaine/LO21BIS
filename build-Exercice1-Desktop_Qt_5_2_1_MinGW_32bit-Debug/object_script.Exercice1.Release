@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\UVManager.o
+./release\UV.o
+./release\UVwindow.o
+./release\mainwindow.o
+./release\CursusManager.o
+./release\CursusWindow.o
+./release\Cursus.o
+./release\moc_UVwindow.o
+./release\moc_mainwindow.o
+./release\moc_CursusWindow.o
+);

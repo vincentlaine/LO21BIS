@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cursus>
+    <unCursus>
+        <nom>TC</nom>
+        <categorie>C_TC</categorie>
+        <CS>70</CS>
+        <TM>36</TM>
+        <TSH>24</TSH>
+        <SP>6</SP>
+        <UVs>
+            <uv>MT90</uv>
+            <uv></uv>
+        </UVs>
+    </unCursus>
+    <unCursus>
+        <nom>GI</nom>
+        <categorie>C_Branche</categorie>
+        <CS>70</CS>
+        <TM>45</TM>
+        <TSH>24</TSH>
+        <SP>100</SP>
+        <UVs>
+            <uv>NF16</uv>
+        </UVs>
+    </unCursus>
+    <unCursus>
+        <nom>GB</nom>
+        <categorie>C_Branche</categorie>
+        <CS>45</CS>
+        <TM>43</TM>
+        <TSH>56</TSH>
+        <SP>43</SP>
+        <UVs>
+            <uv>BL22</uv>
+            <uv>MB11</uv>
+        </UVs>
+    </unCursus>
+</Cursus>
