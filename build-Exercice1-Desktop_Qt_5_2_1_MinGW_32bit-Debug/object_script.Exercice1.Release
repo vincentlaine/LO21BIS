@@ -7,12 +7,7 @@ INPUT(
 ./release\CursusManager.o
 ./release\CursusWindow.o
 ./release\Cursus.o
-./release\Dossier.o
-./release\Inscription.o
 ./release\moc_UVwindow.o
 ./release\moc_mainwindow.o
 ./release\moc_CursusWindow.o
-./release\moc_DossierEditeur.o
-./release\moc_Inscription.o
-./release\moc_Equivalence.o
 );

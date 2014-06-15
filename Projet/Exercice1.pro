@@ -16,9 +16,7 @@ SOURCES += \
     mainwindow.cpp \
     CursusManager.cpp \
     CursusWindow.cpp \
-    Cursus.cpp \
-    Dossier.cpp \
-    Inscription.cpp
+    Cursus.cpp
 
 HEADERS += \
     Etudiant.h \
@@ -35,11 +33,7 @@ HEADERS += \
     mainwindow.h \
     CursusWindow.h \
     Cursus.h \
-    CursusManager.h \
-    Dossier.h \
-    DossierEditeur.h \
-    Inscription.h \
-    Equivalence.h
+    CursusManager.h
 
 RESOURCES +=
 
