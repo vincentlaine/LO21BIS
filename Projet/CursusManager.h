@@ -3,8 +3,9 @@
 
 #include "Cursus.h"
 #include "UVManager.h"
+#include "exception.h"
 
-typedef EnumIterator<Curs> CursusIterator;
+typedef EnumIterator<CategorieCursus> CursusIterator;
 
 QString CategorieCursusToString(CategorieCursus c);
 
@@ -34,7 +35,7 @@ public:
     void save();
     static CursusManager* getInstance();
     static void libererInstance();
-    void ajouterCursus(const QString n, const QString* t, unsigned int nbU, CategorieCursus c, unsigned int CS, unsigned int TM, unsigned int TSH, unsigned int SP);
+    void ajouterCursus(QString n, CategorieCursus cat, int nbCS, int nbTM, int nbTSH, int nbSP);
     void ajouterCursus(Curs *cur);
     const Curs* getCursus(const QString& nom) const;
     Curs** getMesCursus() const {return mesCursus;}
