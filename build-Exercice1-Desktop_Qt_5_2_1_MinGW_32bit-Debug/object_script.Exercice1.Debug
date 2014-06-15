@@ -7,7 +7,12 @@ INPUT(
 ./debug\CursusManager.o
 ./debug\CursusWindow.o
 ./debug\Cursus.o
+./debug\Dossier.o
+./debug\Inscription.o
 ./debug\moc_UVwindow.o
 ./debug\moc_mainwindow.o
 ./debug\moc_CursusWindow.o
+./debug\moc_DossierEditeur.o
+./debug\moc_Inscription.o
+./debug\moc_Equivalence.o
 );
