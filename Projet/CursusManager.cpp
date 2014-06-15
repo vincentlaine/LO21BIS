@@ -1,8 +1,18 @@
 #include "CursusManager.h"
+#include <fstream>
+#include <sstream>
+#include <QString>
+#include <iostream>
+#include <QTextStream>
+#include <QFile>
+#include <QTextCodec>
+#include <QtXml>
+#include <QMessageBox>
 
 QString CategorieCursusToString(CategorieCursus c){
     switch(c){
     case TC: return "TC";
+    case Branche: return "Branche";
     case Filiere: return "Filiere";
     case Cursus: return "Cursus";
     case HuTech: return "HuTech";
@@ -14,6 +24,8 @@ QString CategorieCursusToString(CategorieCursus c){
 
 CategorieCursus StringToCategorieCursus(const QString& str){
     if (str=="TC") return TC;
+    else
+    if (str=="Branche") return Branche;
     else
     if (str=="Cursus") return Cursus;
     else
@@ -54,7 +66,9 @@ CursusManager::~CursusManager(){
 }
 
 void CursusManager::load(const QString& f){
+    if (file!=f) this->~CursusManager();
     file=f;
+
     QFile fin(file);
     // If we can't open it, let's show an error message.
     if (!fin.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -92,10 +106,6 @@ void CursusManager::load(const QString& f){
                 while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "unCursus")) {
                     if(xml.tokenType() == QXmlStreamReader::StartElement) {
                         // We've found code.
-                        /*
-                        if(xml.name()=="parent"){
-                            xml.readNext();p=StringToCursus(xml.text().toString());
-                        }*/
                         if(xml.name() == "nom") {
                             xml.readNext(); nom=xml.text().toString();
                         }
@@ -138,7 +148,7 @@ void CursusManager::load(const QString& f){
                     xml.readNext();
 
                 }
-                this->ajouterCursus(nom, uvs, nUV, cat, nbCS, nbTM, nbTSH, nbSP);
+                this->ajouterCursus(nom, cat, nbCS, nbTM, nbTSH, nbSP);
                 nUV=0;
                 QString* old=uvs;
                 uvs=new QString[10];
@@ -165,13 +175,10 @@ void CursusManager::addItem(Curs* cu){
         mesCursus[nbCursus++]=cu;
 }
 
-void CursusManager::ajouterCursus(const QString n, const QString* t, unsigned int nbU, CategorieCursus c, unsigned int CS, unsigned int TM, unsigned int TSH, unsigned int SP){
+void CursusManager::ajouterCursus(QString n, CategorieCursus cat, int nbCS, int nbTM, int nbTSH, int nbSP){
     if (trouverCursus(n)) throw Exception(QString("erreur, CursusManager, Cursus")+n+QString("déja existant"));
-    Curs* newcursus=new Curs(n,c,CS,TM,TSH,SP);
+    Curs* newcursus=new Curs(n,cat,nbCS,nbTM,nbTSH,nbSP);
 
-    for(unsigned int i=0;i<nbU;i++){
-        newcursus->addUV(t[i]);
-    }
     addItem(newcursus);
     return;
 }
