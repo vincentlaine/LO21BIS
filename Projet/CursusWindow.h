@@ -31,14 +31,6 @@ class CursusEditeur :  public QWidget {
     QComboBox* categorie;
     QLabel* categorieLabel;
 
-    QComboBox* UVs;
-    QLabel* UVsLabel;
-    QPushButton* supprimerUV;
-
-    QLineEdit* newUV;
-    QLabel* UVLabel;
-    QPushButton* ok;
-
     QPushButton* sauver;
     QPushButton* annuler;
     QPushButton* ajouter;
@@ -55,12 +47,11 @@ class CursusEditeur :  public QWidget {
 
 public :
     CursusEditeur(QWidget *parent = 0);
-    CursusEditeur(const Curs* ,QWidget* parent=0);
+    CursusEditeur(Curs* ,QWidget* parent=0);
 
 public slots :
    void ajouterCursus();
    void sauverCursus();
-   void ajoutUV();
 };
 
 #endif // CursusWINDOW_H
