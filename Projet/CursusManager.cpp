@@ -92,10 +92,6 @@ void CursusManager::load(const QString& f){
                 while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "unCursus")) {
                     if(xml.tokenType() == QXmlStreamReader::StartElement) {
                         // We've found code.
-                        /*
-                        if(xml.name()=="parent"){
-                            xml.readNext();p=StringToCursus(xml.text().toString());
-                        }*/
                         if(xml.name() == "nom") {
                             xml.readNext(); nom=xml.text().toString();
                         }

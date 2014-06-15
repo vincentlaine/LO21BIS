@@ -12,7 +12,6 @@ private:
     QString* tabUV;
     unsigned int nbUV;
     unsigned int nbMaxUV;
-    const Curs *parent;
     QString nom;
     CategorieCursus categorie;
     unsigned int credCS;
@@ -22,14 +21,13 @@ private:
 
     Curs(const Curs &c);
     Curs& operator=(const Curs& c);
-    Curs(QString n, CategorieCursus cat, unsigned int nbCS, unsigned int nbTM, unsigned int nbTSH, unsigned int nbSP, const Curs* p=0 ) : nom(n), categorie(cat), credCS(nbCS), credTM(nbTM), credTSH(nbTSH), credSP(nbSP),nbUV(0), nbMaxUV(4), tabUV(new QString[4]), parent(p){}
+    Curs(QString n, CategorieCursus cat, unsigned int nbCS, unsigned int nbTM, unsigned int nbTSH, unsigned int nbSP) : nom(n), categorie(cat), credCS(nbCS), credTM(nbTM), credTSH(nbTSH), credSP(nbSP),nbUV(0), nbMaxUV(4), tabUV(new QString[4]){}
 
     friend class CursusManager;
 public :
     QString getNom() const {return nom;}
     CategorieCursus getCategorie() const {return categorie;}
     const QString* getTabUV()const{return tabUV;}
-    const Curs* getParent()const{return parent;}
     unsigned int getNbUV()const{return nbUV;}
     unsigned int getCredCS()const {return credCS;}
     unsigned int getCredTM()const {return credTM;}
@@ -40,7 +38,6 @@ public :
     void setCredTSH(unsigned int n){credTSH=n;}
     void setCredSP(unsigned int n){credSP=n;}
     void setCategorie(CategorieCursus c){categorie=c;}
-    void setParent(const Curs* p){parent=p;}
     void addUV(QString u);
 };
 

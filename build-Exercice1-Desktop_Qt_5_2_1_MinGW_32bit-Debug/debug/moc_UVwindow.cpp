@@ -77,7 +77,6 @@ void UVEditeur::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->sauverUV(); break;
         case 1: _t->ajouterUV(); break;
         case 2: _t->supprimerUV(); break;
-        case 3: _t->activerSauver((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }

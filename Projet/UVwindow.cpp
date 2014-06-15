@@ -51,23 +51,15 @@ QWidget(parent),uv(uvToEdit){
     couche->addLayout(coucheH3);
     couche->addLayout(coucheH4);
     setLayout(couche);
-    sauver->setEnabled(false);
 
     QObject::connect(sauver,SIGNAL(clicked()),this,SLOT(sauverUV()));
     QObject::connect(supprimer,SIGNAL(clicked()),this,SLOT(supprimerUV()));
     QObject::connect(annuler,SIGNAL(clicked()), this, SLOT(close()));
-
-    QObject::connect(code,SIGNAL(textEdited(QString)),this,SLOT(activerSauver(QString)));
-    QObject::connect(titre,SIGNAL(textChanged()),this,SLOT(activerSauver()));
-    QObject::connect(categorie,SIGNAL(currentIndexChanged(QString)),this,SLOT(activerSauver(QString)));
-    QObject::connect(credits,SIGNAL(valueChanged(QString)),this,SLOT(activerSauver(QString)));
-    QObject::connect(automne,SIGNAL(clicked()),this,SLOT(activerSauver()));
-    QObject::connect(printemps,SIGNAL(clicked()),this,SLOT(activerSauver()));
 }
 
 UVEditeur::UVEditeur(QWidget *parent) :
 QWidget(parent){
-    this->setWindowTitle(QString("Ajout d'une nouvelle UV' "));
+    this->setWindowTitle(QString("Ajout d'une nouvelle UV"));
     // creation des labels
     codeLabel = new QLabel("code",this);
     titreLabel = new QLabel("titre",this);
@@ -81,7 +73,7 @@ QWidget(parent){
     credits->setRange(1,8);
     categorie=new QComboBox(this);
     for(CategorieIterator it=CategorieIterator::getFirst(); !it.isDone(); it.next())
-    categorie->addItem(CategorieToString(*it));
+        categorie->addItem(CategorieToString(*it));
     automne=new QCheckBox("automne",this);
     printemps=new QCheckBox("printemps",this);
     ajouter= new QPushButton("Ajouter", this);
@@ -111,21 +103,9 @@ QWidget(parent){
     couche->addLayout(coucheH3);
     couche->addLayout(coucheH4);
     setLayout(couche);
-    sauver->setEnabled(false);
 
-    QObject::connect(ajouter,SIGNAL(clicked()),this,SLOT(sauverUV()));
+    QObject::connect(ajouter,SIGNAL(clicked()),this,SLOT(ajouterUV()));
     QObject::connect(annuler,SIGNAL(clicked()), this, SLOT(close()));
-
-    QObject::connect(code,SIGNAL(textEdited(QString)),this,SLOT(activerSauver(QString)));
-    QObject::connect(titre,SIGNAL(textChanged()),this,SLOT(activerSauver()));
-    QObject::connect(categorie,SIGNAL(currentIndexChanged(QString)),this,SLOT(activerSauver(QString)));
-    QObject::connect(credits,SIGNAL(valueChanged(QString)),this,SLOT(activerSauver(QString)));
-    QObject::connect(automne,SIGNAL(clicked()),this,SLOT(activerSauver()));
-    QObject::connect(printemps,SIGNAL(clicked()),this,SLOT(activerSauver()));
-}
-
-void UVEditeur::activerSauver(QString){
-    sauver->setEnabled(true);
 }
 
 void UVEditeur::sauverUV(){
