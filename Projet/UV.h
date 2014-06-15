@@ -25,6 +25,9 @@ QTextStream& operator>>(QTextStream& f, Categorie& cat);
 Categorie StringToCategorie(const QString& s);
 QString CategorieToString(Categorie c);
 
+Note StringToNote(const QString& s);
+QString NoteToString(Note N);
+
 class UV{
 
 private:

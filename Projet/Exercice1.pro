@@ -21,7 +21,8 @@ SOURCES += \
 HEADERS += \
     Etudiant.h \
     UV.h \
-    #Inscription.h \
+    Inscription.h \
+    #Equivalence.h \
     filiere.h \
     semestre.h \
     semestre_etranger.h \
@@ -33,7 +34,8 @@ HEADERS += \
     mainwindow.h \
     CursusWindow.h \
     Cursus.h \
-    CursusManager.h
+    CursusManager.h \
+    dossier.h
 
 RESOURCES +=
 

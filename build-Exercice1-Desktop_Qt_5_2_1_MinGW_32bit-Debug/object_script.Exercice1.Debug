@@ -7,6 +7,7 @@ INPUT(
 ./debug\CursusManager.o
 ./debug\CursusWindow.o
 ./debug\Cursus.o
+./debug\moc_Inscription.o
 ./debug\moc_UVwindow.o
 ./debug\moc_mainwindow.o
 ./debug\moc_CursusWindow.o

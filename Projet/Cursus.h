@@ -9,9 +9,7 @@ enum CategorieCursus {
 
 class Curs{
 private:
-    QString* tabUV;
-    unsigned int nbUV;
-    unsigned int nbMaxUV;
+
     const Curs *parent;
     QString nom;
     CategorieCursus categorie;
@@ -20,6 +18,9 @@ private:
     unsigned int credTSH;
     unsigned int credSP;
 
+    unsigned int nbUV;
+    unsigned int nbMaxUV;
+    QString* tabUV;
     Curs(const Curs &c);
     Curs& operator=(const Curs& c);
     Curs(QString n, CategorieCursus cat, unsigned int nbCS, unsigned int nbTM, unsigned int nbTSH, unsigned int nbSP, const Curs* p=0 ) : nom(n), categorie(cat), credCS(nbCS), credTM(nbTM), credTSH(nbTSH), credSP(nbSP),nbUV(0), nbMaxUV(4), tabUV(new QString[4]), parent(p){}

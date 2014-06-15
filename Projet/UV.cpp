@@ -56,3 +56,21 @@ QString CategorieToString(Categorie c){
     default: throw Exception("erreur, categorie non traitee",__FILE__,__LINE__);
     }
 }
+
+/*
+Note StringToNote(const QString& s)
+{
+    if (s=="A") return Note::A;
+    else
+    if (s=="B") return Categorie::TM;
+    else
+    if (s=="C") return Categorie::SP;
+    else
+    if (s=="D") return Categorie::TSH;
+    else
+    if (s=="D") return Categorie::TSH;
+    else {
+        throw Exception(QString("erreur, StringToCategorie, categorie ")+str+" inexistante");
+    }
+}
+QString NoteToString(Note N);*/
